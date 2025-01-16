@@ -11,7 +11,7 @@ public class Util {
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc", "root", "Veronika2009!");
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 

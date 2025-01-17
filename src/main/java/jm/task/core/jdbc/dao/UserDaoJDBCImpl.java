@@ -17,16 +17,18 @@ public class UserDaoJDBCImpl implements UserDao {
             "CREATE TABLE IF NOT EXISTS users " +
                     "(id BIGINT NOT NULL AUTO_INCREMENT, name VARCHAR(45) NOT NULL, " +
                     "lastName VARCHAR(45) NOT NULL, age TINYINT NOT NULL, PRIMARY KEY (id))";
+
     private static final String DROP_TABLE = "DROP TABLE IF EXISTS users";
+
     private static final String SAVE_USER = "INSERT INTO users (name, lastName, age) VALUES (?, ?, ?)";
+
     private static final String REMOVE_USER = "DELETE FROM users WHERE id = ?";
+
     private static final String GET_ALL_USERS = "SELECT * FROM users";
+
     private static final String CLEAN_TABLE = "TRUNCATE TABLE users";
 
-
     public UserDaoJDBCImpl() {
-
-
     }
 
     public void createUsersTable() {
@@ -36,7 +38,6 @@ public class UserDaoJDBCImpl implements UserDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 
     public void dropUsersTable() {
